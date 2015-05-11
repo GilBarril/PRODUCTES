@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="http://mask-process.codio.io/missatgeApp/assets/app.css" type="text/css" />
+</head>
+
+<body ng-app='appLearn'>
+    
+    <div class="container" ng-controller="ProductesController">
+
+        <div class="col-xs-6">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="producte in productes">
+                    <p class="titol"><i>Nom:</i> <strong> {{producte.nom}}</strong></p>
+                    <p><i>Preu:</i> {{producte.preu}} <span class="glyphicon glyphicon-euro"></span></p>
+                    <p><i>Existencies:</i> {{producte.existencies}}</p>
+                    <button class="btn btn-info" ng-click="editarproducte(producte)">
+                        Modifica <span class="glyphicon glyphicon-edit"></span>
+                    </button>
+                    <button class="btn btn-danger" ng-click="borrarproducte(producte)">Esborra <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </li>
+            </ul>
+
+        </div>
+        <div class="col-xs-6">
+
+            <form>
+                <div>
+                    <span><strong>Afegir Producte</strong></span>
+                    <input ng-model="nom" placeholder="Nom"/>
+                    
+                    <input ng-model="preu" placeholder="Preu"/>
+                    
+                    <input ng-model="existencies" placeholder="Existencies"/>
+
+
+                    <br>
+                    <button class="btn btn-default " ng-click="afegirproducte()">Afegir Producte <span class="glyphicon glyphicon-save"></span></button>
+
+                </div>
+            </form>
+<br>
+            <form>
+                <div>
+                    <span><strong>Editar Producte</strong></span>
+                    <input data-ng-model="nomE"  />
+                   
+                    <input data-ng-model="preuE" />
+                    <br>
+
+                    <button class="btn btn-default" ng-click="modificarproducte()">Guarda Modificació <span class="glyphicon glyphicon-floppy-disk"></span></button>
+
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-resource.js"></script>
+    <script src="http://milan-peace.codio.io/examapp/assets/app.js"></script>
+
+</body>
+
+</html>

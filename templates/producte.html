@@ -1,0 +1,23 @@
+
+        <div class="col-xs-6">
+            <ul class="list-group">
+                <div ng-repeat="missatge in missatges">
+                    <p>{{missatge}}</p>
+                </div>
+                <li class="list-group-item" ng-repeat="producte in productes">
+                    
+                    <p ng-repeat="botiga in producte.Botiga" class="titol"><i>Botiga:</i> <strong> {{botiga.nom}}</strong></p>
+                    <p><i>Nom:</i> {{producte.nom}}</p>
+                    <p><i>Preu:</i> {{producte.preu}} <span class="glyphicon glyphicon-euro"></span></p>
+                    <p><i>Existencies:</i> {{producte.existencies}}</p>
+                    <button ng-if="currentUser" class="btn btn-info" ng-click="editarproducte(producte)">
+                        Modifica <span class="glyphicon glyphicon-edit"></span>
+                    </button>
+                    <button ng-if="currentUser" class="btn btn-danger" ng-click="borrarproducte(producte)">Esborra <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </li>
+            </ul>
+
+        </div>
+
+  

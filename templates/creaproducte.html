@@ -1,0 +1,33 @@
+    
+    <div class="container" ng-controller="Nouproductecontroller">
+       
+        <div class="col-xs-6">
+
+            <form>
+                <div>
+                  <h1 class="text-center">Afegir Producte</h1>
+                    <hr>
+                    <fieldset>
+                              
+                  
+                  <label ng-repeat="botiga in botigues">
+                        <input type="checkbox" ng-click="toggle(botiga._id)" value={{botiga.nom}} />{{botiga.nom}}
+                  </label>
+                          </fieldset>
+                    <input ng-model="nom" placeholder="Nom"/>
+                    
+                    <input ng-model="preu" placeholder="Preu"/>
+                    
+                    <input ng-model="existencies" placeholder="Existencies"/>
+
+
+                    <br>
+                    <button class="btn btn-default " ng-click="afegirproducte()">Afegir Producte <span class="glyphicon glyphicon-save"></span></button>
+
+                </div>
+            </form>
+           
+        </div>
+
+    </div>
+   

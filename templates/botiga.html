@@ -1,0 +1,17 @@
+       
+<div class="col-xs-6">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="botiga in botigues">
+                    <p class="titol"><i>Botiga:</i> <strong> {{botiga.nom}}</strong></p>
+                    <p><i>Poblacio:</i> {{botiga.poblacio}}</p>
+                    
+                    <button ng-if="currentUser" class="btn btn-info" ng-click="editarbotiga(botiga)">
+                        Modifica <span class="glyphicon glyphicon-edit"></span>
+                    </button>
+                    <button ng-if="currentUser" class="btn btn-danger" ng-click="borrarbotiga(botiga)">Esborra <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </li>
+            </ul>
+
+        </div>
+   
